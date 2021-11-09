@@ -1,0 +1,62 @@
+@import "./variables.scss";
+
+@mixin common-bar {
+  height: $toolbar-hieght;
+  background-color: #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+.toolbar {
+  @include common-bar;
+  top: 0;
+  z-index: 10;
+
+  &__btn {
+    height: 40px;
+    width: 40px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-size: cover;
+    margin-left: 5px;
+
+    &:hover {
+      border: 1px solid rgb(122, 119, 119);
+    }
+  }
+  .brush {
+    background: url("../assets/img/brush.png") no-repeat center center;
+  }
+  .rect {
+    background: url("../assets/img/rect.png") no-repeat center center;
+  }
+  .circle {
+    background: url("../assets/img/circle.png") no-repeat center center;
+  }
+  .eraser {
+    background: url("../assets/img/eraser.png") no-repeat center center;
+  }
+  .line {
+    background: url("../assets/img/line.png") no-repeat center center;
+  }
+  .undo {
+    margin-left: auto;
+    background: url("../assets/img/undo.png") no-repeat center center;
+  }
+  .redo {
+    background: url("../assets/img/redo.png") no-repeat center center;
+  }
+  .save {
+    background: url("../assets/img/save.png") no-repeat center center;
+    margin-right: 10px;
+  }
+}
+
+.settings-bar {
+  @include common-bar;
+  top: $toolbar-hieght;
+}
