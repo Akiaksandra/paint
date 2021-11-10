@@ -15,6 +15,12 @@
   top: 0;
   z-index: 10;
 
+  &__input {
+    padding: 5px;
+    width: 60px;
+    height: 40px;
+  }
+
   &__btn {
     height: 40px;
     width: 40px;
@@ -59,4 +65,8 @@
 .settings-bar {
   @include common-bar;
   top: $toolbar-hieght;
+}
+
+.active {
+  border: 1px solid rgb(105, 1, 1);
 }
