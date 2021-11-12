@@ -1,6 +1,8 @@
 import { observer } from "mobx-react-lite";
 import React, { useEffect, useState } from "react";
+
 import toolState from "../store/toolState";
+
 import "../styles/toolbar.scss";
 
 const SettingsBar = observer(() => {
@@ -8,6 +10,7 @@ const SettingsBar = observer(() => {
 
   useEffect(() => {
     toolState.tool && toolState.setStrokeColor(strokeColor);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [strokeColor, toolState.tool]);
 
   return (
