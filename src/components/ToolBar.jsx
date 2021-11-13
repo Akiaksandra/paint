@@ -9,7 +9,6 @@ import Circle from "../tools/Circle";
 import Line from "../tools/Line";
 
 import "../styles/toolbar.scss";
-import PaintBucket from "../tools/PaintBucket";
 
 const ToolBar = () => {
   const [activeTool, setActiveTool] = useState("brush");
@@ -43,11 +42,6 @@ const ToolBar = () => {
     setActiveTool(e.target.dataset.type);
   };
 
-  const handleSetPaintBucket = (e) => {
-    toolState.setTool(new PaintBucket(canvasState.canvas));
-    setActiveTool(e.target.dataset.type);
-  };
-
   const checkActiveClass = (type) => {
     return activeTool === type ? "active" : "";
   };
@@ -57,7 +51,6 @@ const ToolBar = () => {
     { type: "circle", onClick: handleSetCircle },
     { type: "eraser", onClick: handleSetEraser },
     { type: "line", onClick: handleSetLine },
-    { type: "paintBucket", onClick: handleSetPaintBucket },
   ];
 
   return (
